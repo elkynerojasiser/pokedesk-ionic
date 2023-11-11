@@ -1,0 +1,38 @@
+
+.d-flex {
+    display: flex;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.align-items-center {
+    align-items: center;
+}
+
+.adjust-height {
+    max-height: 90vh;
+}
+
+.spinner-container {
+    height: 100%;
+    .spinner-custom {
+        margin-top: 200px;
+    }
+}
+.card-pokemon {
+    width: 120px;
+    height: 90px;
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .image-pokemon {
+        height: 50px;
+    }
+    .name-pokemon {
+        margin-top: 5px;
+        font-weight: bold;
+    }
+}
