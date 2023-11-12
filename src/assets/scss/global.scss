@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+.flex-column {
+    flex-direction: column;
+}
+
 .adjust-height {
     max-height: 90vh;
 }
@@ -36,3 +40,4 @@
         font-weight: bold;
     }
 }
+

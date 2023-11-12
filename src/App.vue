@@ -1,9 +1,18 @@
 <template>
   <ion-app>
-    <ion-router-outlet />
+    <menu-app/>
+    <ion-page id="main-content">
+      <ion-router-outlet />
+    </ion-page>
   </ion-app>
 </template>
 
-<script setup lang="ts">
-import { IonApp, IonRouterOutlet } from '@ionic/vue';
+<script lang="ts">
+import { IonApp, IonRouterOutlet, IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonPage } from "@ionic/vue";
+import MenuApp from './components/MenuApp.vue';
+export default {
+  components: {
+    IonApp, IonRouterOutlet, IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonPage, MenuApp
+  }
+}
 </script>
