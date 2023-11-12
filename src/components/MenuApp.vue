@@ -10,7 +10,7 @@
                 <ion-item href="/">
                     <ion-label>Listado de pokemons</ion-label>
                 </ion-item>
-                <ion-item >
+                <ion-item href="/game">
                     <ion-label>Quién es este pokemón</ion-label>
                 </ion-item>
             </ion-list>

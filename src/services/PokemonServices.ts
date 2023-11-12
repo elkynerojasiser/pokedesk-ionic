@@ -94,6 +94,15 @@ async function getTypes(types){
 
     return gottenTypes
 }
+
+async function idsForGame() {
+    let list = [];
+    for(let i = 0; i<=3; i++){
+        list[i] = Math.floor(Math.random() * 649) + 1
+    }
+    
+    return list
+}
 export default {
     async getPokemonList(start:number,end:number){
         let gottenPokemons = []
@@ -127,6 +136,7 @@ export default {
             console.log(error)
         })
         let pokemon = {
+            id: gottenPokemon.id,
             name: gottenPokemon.name,
             image: gottenPokemon.sprites.other.dream_world.front_default,
             abilities: await getAbilities(gottenPokemon.abilities),
@@ -137,7 +147,25 @@ export default {
 
 
         return pokemon
+    },
+    async getListForGame() {
+        const list = await idsForGame()
+        let pokemons = [];
+        list.forEach(async (element) => {
+            const gottenPokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${element}`)
+            .then(response => {
+                return response.data
+            })
+            .catch(error => {
+                console.log(error)
+            })
+            let pokemon = {
+                id: gottenPokemon.id,
+                name: gottenPokemon.name,
+                image: gottenPokemon.sprites.other.dream_world.front_default,
+            }
+            pokemons.push(pokemon)
+        });
+        return pokemons;
     }
-
-    
 }
